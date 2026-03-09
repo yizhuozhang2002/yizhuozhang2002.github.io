@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yizhuo Zhang | Portfolio</title>
+    <link rel="icon" href="https://public-frontend-cos.metadl.com/mgx/img/favicon_atoms.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- ========== OPENING SCREEN - Particle Cosmos ========== -->
+    <div class="opening-screen" id="openingScreen">
+        <canvas id="cosmosCanvas"></canvas>
+        <div class="opening-content" id="openingContent">
+            <div class="opening-greeting">Hello, I'm</div>
+            <h1 class="opening-name">
+                <span class="name-char-white" style="--i:0">Y</span><span class="name-char-white" style="--i:1">i</span><span class="name-char-white" style="--i:2">z</span><span class="name-char-white" style="--i:3">h</span><span class="name-char-white" style="--i:4">u</span><span class="name-char-white" style="--i:5">o</span>
+            </h1>
+            <p class="opening-subtitle">Agentic AI · Computer Science · NUS · Physics at ICL</p>
+            <button class="discover-btn" id="discoverBtn">
+                <span class="discover-btn-text">Discover More</span>
+                <span class="discover-btn-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 17l9.2-9.2M17 17V7H7"/>
+                    </svg>
+                </span>
+            </button>
+        </div>
+        <!-- Floating orbit rings -->
+        <div class="orbit-ring orbit-ring-1"></div>
+        <div class="orbit-ring orbit-ring-2"></div>
+        <div class="orbit-ring orbit-ring-3"></div>
+    </div>
+
+    <!-- ========== MAIN SITE (hidden initially) ========== -->
+    <div class="main-site" id="mainSite">
+
+        <!-- Navigation -->
+        <nav class="navbar" id="navbar">
+            <div class="nav-container">
+                <a href="#home" class="nav-logo">
+                    <span class="logo-text">YZ</span><span class="logo-dot">.</span>
+                </a>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#publications" class="nav-link">Publications</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-bg-image"></div>
+            <canvas id="heroParticles"></canvas>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="hero-badge anim">
+                    <span class="badge-dot"></span>
+                    <span>Available for opportunities</span>
+                </div>
+                <h1 class="hero-title anim">Hello, I am <span class="gradient-text">Yizhuo</span></h1>
+                <div class="hero-typing-wrapper anim">
+                    <span class="typing-prefix">I build </span>
+                    <span class="typing-text" id="typingText"></span>
+                    <span class="typing-cursor">|</span>
+                </div>
+                <p class="hero-desc anim">Master of Computing @ NUS · BSc Physics @ Imperial College London</p>
+                <div class="hero-buttons anim">
+                    <a href="#about" class="btn btn-primary"><span>Explore My Work</span><i class="fa-solid fa-arrow-down"></i></a>
+                    <a href="images/Yizhuo_Zhang_Resume.pdf" class="btn btn-outline" download><span>Download CV</span><i class="fa-solid fa-download"></i></a>
+                </div>
+                <div class="hero-social anim">
+                    <a href="https://www.linkedin.com/in/yizhuo-zhang-07b2a1274/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://github.com/yizhuozhang2002" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse"><div class="mouse-wheel"></div></div>
+                <span>Scroll</span>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-header anim">
+                    <span class="section-tag">01</span>
+                    <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="about-grid">
+                    <div class="about-info anim">
+                        <div class="glass-card">
+                            <div class="about-photo-wrapper">
+                                <img src="images/profile.png" alt="Yizhuo Zhang" class="about-photo">
+                            </div>
+                            <ul class="info-list">
+                                <li><span class="info-label"><i class="fa-solid fa-user"></i> Name</span><span class="info-value">Yizhuo Zhang</span></li>
+                                <li><span class="info-label"><i class="fa-solid fa-heart"></i> Pronouns</span><span class="info-value">She / Her / Hers</span></li>
+                                <li><span class="info-label"><i class="fa-solid fa-graduation-cap"></i> Education</span><span class="info-value">NUS · Imperial College London</span></li>
+                                <li><span class="info-label"><i class="fa-solid fa-crosshairs"></i> Focus</span><span class="info-value">Deep Learning, Data Analysis, Software Engineering</span></li>
+                                <li><span class="info-label"><i class="fa-solid fa-envelope"></i> Email</span><span class="info-value">sophiazyz2002@outlook.com</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="about-text anim">
+                        <div class="glass-card">
+                            <p>Master of Computing candidate at <strong>NUS</strong> with a Physics background from <strong>Imperial College London</strong>. Keen to combine mathematical rigor with CS skills. Specializing in the intersection of <strong>Data Analysis</strong>, <strong>Software Engineering</strong>, and <strong>Deep Learning</strong>.</p>
+                            <p>Expertise in developing high-performance models using <strong>PyTorch</strong>, experienced in Linux server environments for efficient model fine-tuning. An enthusiastic learner, open-minded thinker and precise communicator.</p>
+                            <div class="about-stats">
+                                <div class="stat-item"><span class="stat-number" data-count="10">0</span><span class="stat-plus">+</span><span class="stat-label">Projects</span></div>
+                                <div class="stat-item"><span class="stat-number" data-count="4">0</span><span class="stat-plus">+</span><span class="stat-label">Publications</span></div>
+                                <div class="stat-item"><span class="stat-number" data-count="2">0</span><span class="stat-label">Degrees</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Education Timeline -->
+                <div class="edu-section">
+                    <h3 class="sub-heading anim"><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+                    <div class="timeline">
+                        <div class="timeline-item anim">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card glass-card">
+                                <div class="timeline-header"><h4>National University of Singapore (NUS)</h4><span class="timeline-badge">Dec 2024 – Jun 2026</span></div>
+                                <span class="timeline-subtitle">Master of Computing · Singapore</span>
+                                <p>Deep Learning & Neural Networks, ML & AI, Database Design, Software Development, Knowledge Discovery and Data Mining.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item anim">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card glass-card">
+                                <div class="timeline-header"><h4>Imperial College London (ICL)</h4><span class="timeline-badge">Sep 2021 – Aug 2024</span></div>
+                                <span class="timeline-subtitle">BSc in Physics · London, UK</span>
+                                <p>Linear Algebra, Probability & Statistics, Computational Physics (Numerical Optimization, Monte Carlo), Vector & Tensor Calculus, Physical Simulation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="section section-alt">
+            <div class="container">
+                <div class="section-header anim">
+                    <span class="section-tag">02</span>
+                    <h2 class="section-title">Skills & <span class="gradient-text">Expertise</span></h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-category anim glass-card">
+                        <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
+                        <h3>Languages</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag hl">Python</span>
+                            <span class="skill-tag hl">TypeScript</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">SQL (PostgreSQL)</span>
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">MATLAB</span>
+                            <span class="skill-tag">LaTeX</span>
+                        </div>
+                        <div class="skill-bar-wrap"><div class="skill-bar" data-width="95"></div></div>
+                    </div>
+                    <div class="skill-category anim glass-card">
+                        <div class="skill-icon"><i class="fa-solid fa-brain"></i></div>
+                        <h3>Deep Learning</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag hl">PyTorch</span>
+                            <span class="skill-tag">TensorFlow</span>
+                            <span class="skill-tag hl">Hugging Face</span>
+                            <span class="skill-tag">JAX</span>
+                            <span class="skill-tag">DeepSpeed</span>
+                            <span class="skill-tag">WandB</span>
+                        </div>
+                        <div class="skill-bar-wrap"><div class="skill-bar" data-width="92"></div></div>
+                    </div>
+                    <div class="skill-category anim glass-card">
+                        <div class="skill-icon"><i class="fa-solid fa-eye"></i></div>
+                        <h3>CV & LLMs</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag hl">YOLO (v8/v10)</span>
+                            <span class="skill-tag">LLaMA-Factory</span>
+                            <span class="skill-tag">OpenCV</span>
+                            <span class="skill-tag">LangChain</span>
+                            <span class="skill-tag">AutoGen</span>
+                        </div>
+                        <div class="skill-bar-wrap"><div class="skill-bar" data-width="88"></div></div>
+                    </div>
+                    <div class="skill-category anim glass-card">
+                        <div class="skill-icon"><i class="fa-solid fa-server"></i></div>
+                        <h3>Web & Infra</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag hl">React</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">GraphQL</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">GCP</span>
+                            <span class="skill-tag">Linux (HPC)</span>
+                            <span class="skill-tag">Git</span>
+                        </div>
+                        <div class="skill-bar-wrap"><div class="skill-bar" data-width="85"></div></div>
+                    </div>
+                    <div class="skill-category anim glass-card">
+                        <div class="skill-icon"><i class="fa-solid fa-flask"></i></div>
+                        <h3>Scientific Computing</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag hl">Pandas</span>
+                            <span class="skill-tag hl">NumPy</span>
+                            <span class="skill-tag">COMSOL</span>
+                            <span class="skill-tag">Symbolic Regression</span>
+                            <span class="skill-tag">Geopandas</span>
+                        </div>
+                        <div class="skill-bar-wrap"><div class="skill-bar" data-width="90"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience" class="section">
+            <div class="container">
+                <div class="section-header anim">
+                    <span class="section-tag">03</span>
+                    <h2 class="section-title">Experience & <span class="gradient-text">Research</span></h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="timeline">
+                    <!-- Agentic AI -->
+                    <div class="timeline-item anim">
+                        <div class="timeline-dot pulse"></div>
+                        <div class="timeline-card glass-card">
+                            <div class="timeline-header"><h4>Agentic AI: Autonomous Multi-Agent Job System</h4><span class="timeline-badge active">Jan 2026 – Present</span></div>
+                            <span class="timeline-subtitle">Lead Developer / System Architect · Personal Project</span>
+                            <ul class="tl-list">
+                                <li>Engineered an <strong>8-agent collaborative system</strong> using LangChain and AutoGen to automate the end-to-end job application lifecycle.</li>
+                                <li>Developed a <strong>screenshot-first GUI interaction paradigm</strong> utilizing VLMs for visual grounding and Playwright for robust, DOM-independent browser automation.</li>
+                                <li>Implemented dynamic task orchestration via <strong>PlanDAG</strong> with Reflexion-inspired failure recovery and multi-modal RAG using ChromaDB.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Telecom Churn -->
+                    <div class="timeline-item anim">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card glass-card">
+                            <div class="timeline-header"><h4>Telecom Churn Analytics & Generative AI</h4><span class="timeline-badge">Feb 2026 – Mar 2026</span></div>
+                            <span class="timeline-subtitle">Data Science Specialist · NUS (CS5228)</span>
+                            <ul class="tl-list">
+                                <li>Customer segmentation and churn analysis for <strong>3,333 users</strong> using K-Means and DBSCAN, identifying a high-risk 10% cluster with 43.7% churn rate.</li>
+                                <li>Optimized <strong>Random Forest and XGBoost</strong> classifiers for Precision-Recall and F1-score.</li>
+                                <li>Leveraged <strong>CTGAN</strong> to synthesize 500 minority-class samples, validating data fidelity via distribution histograms.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Predictive Policing -->
+                    <div class="timeline-item anim">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card glass-card">
+                            <div class="timeline-header"><h4>Predictive Policing Analytics: Chicago Crime Dashboard</h4><span class="timeline-badge">Jan 2026 – Apr 2026</span></div>
+                            <span class="timeline-subtitle">Data Scientist / Project Lead · NUS</span>
+                            <ul class="tl-list">
+                                <li>Processed over <strong>8.46M</strong> raw Chicago crime records using Geopandas for spatial-temporal analysis.</li>
+                                <li>Optimized <strong>Random Forest and Neural Network</strong> models, validating cross-regional generalizability against NIBRS dataset.</li>
+                                <li>Deployed proof-of-concept via <strong>Streamlit and FastAPI</strong> for interactive dashboards.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Multimodal FramePack -->
+                    <div class="timeline-item anim">
+                        <div class="timeline-dot pulse"></div>
+                        <div class="timeline-card glass-card">
+                            <div class="timeline-header"><h4>Multimodal FramePack: LLM-Enhanced Video Diffusion</h4><span class="timeline-badge active">Jan 2025 – Present</span></div>
+                            <span class="timeline-subtitle">Graduate Researcher · NUS — Advisor: Prof. Angela Yao</span>
+                            <ul class="tl-list">
+                                <li>Led architecture of a multimodal generation pipeline using <strong>FramePack and DanceDRPO</strong>, integrating fine-grained RL guidance.</li>
+                                <li>Engineered <strong>Newtonian physics-based reward functions</strong> to enforce dynamic feasibility in generative videos.</li>
+                                <li>Orchestrated development on remote <strong>Linux HPC clusters</strong>.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Autonomous Robotic Control -->
+                    <div class="timeline-item anim">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card glass-card">
+                            <div class="timeline-header"><h4>Autonomous Robotic Control via LLM</h4><span class="timeline-badge">Nov 2025</span></div>
+                            <span class="timeline-subtitle">Algorithm and Prompt Engineer</span>
+                            <ul class="tl-list">
+                                <li>Engineered a context-aware agent (<strong>GPT-4o-mini</strong>) for UR5e control, optimizing prompt architecture to prevent saturation.</li>
+                                <li>Enforced strict API constraints and sanity checks to eliminate execution failures and ensure physical feasibility.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- AI Scheduling -->
+                    <div class="timeline-item anim">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card glass-card">
+                            <div class="timeline-header"><h4>AI Scheduling Assistant: Proactive Calendar Engine</h4><span class="timeline-badge">Aug 2025 – Dec 2025</span></div>
+                            <span class="timeline-subtitle">Full Stack Developer · NUS</span>
+                            <ul class="tl-list">
+                                <li>Full-stack planner with <strong>React, GraphQL, MongoDB</strong> converting static calendars into proactive agents.</li>
+                                <li>Engineered a <strong>ReAct-based LLM agent (DeepSeek)</strong> that cross-references live calendar data with habit rules.</li>
+                                <li>Managed merge conflicts and code reviews for a team of 3.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- CoPhyBench -->
+                    <div class="timeline-item anim">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card glass-card">
+                            <div class="timeline-header"><h4>CoPhyBench & CoPhyFT: Physical World Modeling</h4><span class="timeline-badge">Feb 2025 – Dec 2025</span></div>
+                            <span class="timeline-subtitle">Graduate Researcher · NUS — Advisor: Prof. Angela Yao</span>
+                            <ul class="tl-list">
+                                <li>Directed development of <strong>CoPhyBench</strong> (under review at <strong>ICLR 2026</strong>), benchmarking SOTA Video-LLMs on conditional physical reasoning.</li>
+                                <li>Validated rigour via Blind-QA testing, reducing language bias by <strong>34%</strong> compared to PhysBench.</li>
+                                <li>Engineered <strong>CoPhyFT</strong>, transforming Video-LLMs into predictive world models via Hamiltonian dynamics. Achieved <strong>52.94%</strong> accuracy in counterfactual reasoning, outperforming GPT-4o.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Object Detection -->
+                    <div class="timeline-item anim">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card glass-card">
+                            <div class="timeline-header"><h4>Object Detection & Tracking Via Custom Dataset</h4><span class="timeline-badge">Feb 2025 – Apr 2025</span></div>
+                            <span class="timeline-subtitle">Student Group Project · NUS</span>
+                            <ul class="tl-list">
+                                <li>Led a group of 5 to develop an end-to-end pipeline using <strong>YOLOv8 and ByteTrack</strong> to analyse high-speed badminton gameplay.</li>
+                                <li>Fine-tuned model on a custom-annotated dataset to resolve occlusion issues during intense rallies.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Deep Matrix -->
+                    <div class="timeline-item anim">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card glass-card">
+                            <div class="timeline-header"><h4>Deep Matrix Factorization With Temporal Dynamics</h4><span class="timeline-badge">Feb 2025 – Jun 2025</span></div>
+                            <span class="timeline-subtitle">Student Group Project · NUS</span>
+                            <ul class="tl-list">
+                                <li>Constructed a <strong>DMF recommendation model</strong> incorporating LSTMs and GRUs for temporal features.</li>
+                                <li>Achieved over <strong>20% improvement</strong> in both NDCG and Hit Rate compared to static baselines.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Higgs Boson -->
+                    <div class="timeline-item anim">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card glass-card">
+                            <div class="timeline-header"><h4>Higgs Boson Signal Analysis</h4><span class="timeline-badge">Oct 2023 – Dec 2023</span></div>
+                            <span class="timeline-subtitle">Student Project · Imperial College London</span>
+                            <ul class="tl-list">
+                                <li>Simulated Higgs Boson discovery via photon pair decay using optimised numerical integration techniques.</li>
+                                <li>Techniques: ODE solvers (Explicit/Implicit Euler), MC4, RK4, Riemann Sum, Trapezoidal Rule.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- EBIT -->
+                    <div class="timeline-item anim">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card glass-card">
+                            <div class="timeline-header"><h4>EBIT Laboratory Research Intern</h4><span class="timeline-badge">Jun 2023 – Sep 2023</span></div>
+                            <span class="timeline-subtitle">Summer Research Assistant · Shanghai</span>
+                            <ul class="tl-list">
+                                <li>Conducted precise wavelength identification and lifetime measurements for ionic transitions.</li>
+                                <li>Analysed spectroscopic data using curve-fitting algorithms, contributing to <strong>three published papers</strong>.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Bright Network -->
+                    <div class="timeline-item anim">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card glass-card">
+                            <div class="timeline-header"><h4>Bright Network Internship Experience (UK)</h4><span class="timeline-badge">May 2022 – Jul 2022</span></div>
+                            <span class="timeline-subtitle">Summer Intern</span>
+                            <ul class="tl-list">
+                                <li>Developed an optimal pathfinding algorithm for self-driving delivery vehicles based on the <strong>A* search algorithm</strong>.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="section section-alt">
+            <div class="container">
+                <div class="section-header anim">
+                    <span class="section-tag">04</span>
+                    <h2 class="section-title"><span class="gradient-text">Projects</span></h2>
+                    <p class="section-subtitle">Click on any project card to view more details</p>
+                    <div class="section-line"></div>
+                </div>
+                <div class="projects-grid">
+                    <!-- Original 3 projects with existing links -->
+                    <a href="https://github.com/yizhuozhang2002" target="_blank" class="project-card-link anim" data-tilt>
+                        <div class="project-card-inner glass-card">
+                            <div class="project-icon"><i class="fa-solid fa-robot"></i></div>
+                            <h3>Agentic UI Paradigm</h3>
+                            <p>A screenshot-first GUI interaction framework. Uses VLMs for visual grounding to automate browser tasks independent of DOM structure.</p>
+                            <div class="project-tags"><span>React</span><span>VLM</span><span>Playwright</span></div>
+                            <div class="project-link-hint"><i class="fa-solid fa-arrow-up-right-from-square"></i> Click to view more</div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/yizhuozhang2002" target="_blank" class="project-card-link anim" data-tilt>
+                        <div class="project-card-inner glass-card">
+                            <div class="project-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                            <h3>Spatial Analytics Dashboard</h3>
+                            <p>Interactive spatial-temporal dashboard visualizing 8.46M records. Features high-performance geographical rendering and interactive filtering.</p>
+                            <div class="project-tags"><span>Streamlit</span><span>Geopandas</span><span>FastAPI</span></div>
+                            <div class="project-link-hint"><i class="fa-solid fa-arrow-up-right-from-square"></i> Click to view more</div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/yizhuozhang2002" target="_blank" class="project-card-link anim" data-tilt>
+                        <div class="project-card-inner glass-card">
+                            <div class="project-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                            <h3>Intelligent Web Planner</h3>
+                            <p>Full-stack proactive calendar engine integrating a ReAct-based LLM agent to cross-reference live data and reduce manual planning.</p>
+                            <div class="project-tags"><span>GraphQL</span><span>MongoDB</span><span>LLM</span></div>
+                            <div class="project-link-hint"><i class="fa-solid fa-arrow-up-right-from-square"></i> Click to view more</div>
+                        </div>
+                    </a>
+                    <!-- 6 additional projects with placeholder links -->
+                    <a href="#" target="_blank" class="project-card-link anim" data-tilt>
+                        <div class="project-card-inner glass-card">
+                            <div class="project-icon"><i class="fa-solid fa-brain"></i></div>
+                            <h3>CoPhyBench & CoPhyFT</h3>
+                            <p>Benchmarking Video-LLMs on physical reasoning. Transforms Video-LLMs into world models via Hamiltonian dynamics. 52.94% counterfactual accuracy.</p>
+                            <div class="project-tags"><span>Video-LLM</span><span>ICLR 2026</span><span>HPC</span></div>
+                            <div class="project-link-hint"><i class="fa-solid fa-arrow-up-right-from-square"></i> Click to view more</div>
+                        </div>
+                    </a>
+                    <a href="#" target="_blank" class="project-card-link anim" data-tilt>
+                        <div class="project-card-inner glass-card">
+                            <div class="project-icon"><i class="fa-solid fa-video"></i></div>
+                            <h3>Multimodal FramePack</h3>
+                            <p>LLM-enhanced video diffusion with fine-grained RL guidance and Newtonian physics-based reward functions.</p>
+                            <div class="project-tags"><span>Diffusion</span><span>RL</span><span>Physics</span></div>
+                            <div class="project-link-hint"><i class="fa-solid fa-arrow-up-right-from-square"></i> Click to view more</div>
+                        </div>
+                    </a>
+                    <a href="#" target="_blank" class="project-card-link anim" data-tilt>
+                        <div class="project-card-inner glass-card">
+                            <div class="project-icon"><i class="fa-solid fa-chart-line"></i></div>
+                            <h3>Telecom Churn Analytics</h3>
+                            <p>Customer segmentation with K-Means/DBSCAN. CTGAN for synthetic data generation. XGBoost classifier optimization.</p>
+                            <div class="project-tags"><span>CTGAN</span><span>XGBoost</span><span>DBSCAN</span></div>
+                            <div class="project-link-hint"><i class="fa-solid fa-arrow-up-right-from-square"></i> Click to view more</div>
+                        </div>
+                    </a>
+                    <a href="#" target="_blank" class="project-card-link anim" data-tilt>
+                        <div class="project-card-inner glass-card">
+                            <div class="project-icon"><i class="fa-solid fa-film"></i></div>
+                            <h3>Deep Matrix Factorization</h3>
+                            <p>DMF recommendation model with LSTMs and GRUs for temporal features. 20%+ improvement in NDCG and Hit Rate.</p>
+                            <div class="project-tags"><span>LSTM</span><span>GRU</span><span>RecSys</span></div>
+                            <div class="project-link-hint"><i class="fa-solid fa-arrow-up-right-from-square"></i> Click to view more</div>
+                        </div>
+                    </a>
+                    <a href="#" target="_blank" class="project-card-link anim" data-tilt>
+                        <div class="project-card-inner glass-card">
+                            <div class="project-icon"><i class="fa-solid fa-crosshairs"></i></div>
+                            <h3>Object Detection & Tracking</h3>
+                            <p>End-to-end pipeline using YOLOv8 and ByteTrack to analyse high-speed badminton gameplay with custom-annotated dataset.</p>
+                            <div class="project-tags"><span>YOLOv8</span><span>ByteTrack</span><span>CV</span></div>
+                            <div class="project-link-hint"><i class="fa-solid fa-arrow-up-right-from-square"></i> Click to view more</div>
+                        </div>
+                    </a>
+                    <a href="#" target="_blank" class="project-card-link anim" data-tilt>
+                        <div class="project-card-inner glass-card">
+                            <div class="project-icon"><i class="fa-solid fa-atom"></i></div>
+                            <h3>Higgs Boson Signal Analysis</h3>
+                            <p>Simulated Higgs Boson discovery via photon pair decay using optimised numerical integration and ODE solvers.</p>
+                            <div class="project-tags"><span>Monte Carlo</span><span>RK4</span><span>Physics</span></div>
+                            <div class="project-link-hint"><i class="fa-solid fa-arrow-up-right-from-square"></i> Click to view more</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications -->
+        <section id="publications" class="section">
+            <div class="container">
+                <div class="section-header anim">
+                    <span class="section-tag">05</span>
+                    <h2 class="section-title">Publications</h2>
+                    <p class="section-subtitle">Click on publication titles to view the full paper</p>
+                    <div class="section-line"></div>
+                </div>
+                <div class="publications-list">
+                    <div class="publication-item anim glass-card">
+                        <div class="pub-number">01</div>
+                        <div class="pub-content">
+                            <span class="pub-badge under-review">Under Review – ICLR 2026</span>
+                            <h3>CoPhyBench: Benchmarking Physical Reasoning from Conditional Video Observation</h3>
+                            <p class="pub-authors">Wei, F., Xu, K., <strong>Zhang, Y.</strong>, Sun, P., Xiao, J., Yao, A.</p>
+                        </div>
+                    </div>
+                    <div class="publication-item anim glass-card">
+                        <div class="pub-number">02</div>
+                        <div class="pub-content">
+                            <span class="pub-badge published">Canadian Journal of Physics, 2023</span>
+                            <h3><a href="https://cdnsciencepub.com/doi/10.1139/cjp-2023-0231" target="_blank">Optical lines of Xe<sup>9+</sup> and Xe<sup>10+</sup> ions measured at a low-energy EBIT <i class="fa-solid fa-arrow-up-right-from-square pub-link-icon"></i></a></h3>
+                            <p class="pub-authors">Niu, B., <strong>Zhang, Y.</strong>, et al.</p>
+                        </div>
+                    </div>
+                    <div class="publication-item anim glass-card">
+                        <div class="pub-number">03</div>
+                        <div class="pub-content">
+                            <span class="pub-badge published">Journal of Physics B, 2024</span>
+                            <h3><a href="https://iopscience.iop.org/article/10.1088/1361-6455/ad38aa" target="_blank">The 3d <sup>2</sup>D<sub>5/2</sub>-<sup>2</sup>D<sub>3/2</sub> magnetic dipole transition in potassium-like ions <i class="fa-solid fa-arrow-up-right-from-square pub-link-icon"></i></a></h3>
+                            <p class="pub-authors">Qian, Y., Zhang, C., <strong>Zhang, Y.</strong>, et al.</p>
+                        </div>
+                    </div>
+                    <div class="publication-item anim glass-card">
+                        <div class="pub-number">04</div>
+                        <div class="pub-content">
+                            <span class="pub-badge published">Canadian Journal of Physics, 2024</span>
+                            <h3><a href="https://cdnsciencepub.com/doi/abs/10.1139/cjp-2023-0298" target="_blank">Investigation of optical spectroscopy in W<sup>13+</sup> ions <i class="fa-solid fa-arrow-up-right-from-square pub-link-icon"></i></a></h3>
+                            <p class="pub-authors">Niu, B., Chen, J., Li, B., <strong>Zhang, Y.</strong>, et al.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Honours -->
+        <section id="honours" class="section section-alt">
+            <div class="container">
+                <div class="section-header anim">
+                    <span class="section-tag">06</span>
+                    <h2 class="section-title">Honours & <span class="gradient-text">Activities</span></h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="honours-grid">
+                    <div class="honour-card anim glass-card">
+                        <div class="honour-icon"><i class="fa-solid fa-trophy"></i></div>
+                        <h3>BPhO Top Gold 2020</h3>
+                        <p>Top national ranking in the British Physics Olympiad.</p>
+                    </div>
+                    <div class="honour-card anim glass-card">
+                        <div class="honour-icon"><i class="fa-solid fa-users"></i></div>
+                        <h3>Girls Who ML</h3>
+                        <p>Organized ML workshops for undergraduate women at Imperial College London.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-header anim">
+                    <span class="section-tag">07</span>
+                    <h2 class="section-title">Get in <span class="gradient-text">Touch</span></h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info anim">
+                        <div class="contact-card glass-card"><div class="contact-icon"><i class="fa-solid fa-envelope"></i></div><h3>Email</h3><p>sophiazyz2002@outlook.com</p></div>
+                        <div class="contact-card glass-card"><div class="contact-icon"><i class="fa-solid fa-phone"></i></div><h3>Phone</h3><p>(+65) 9897 5534</p></div>
+                        <div class="contact-card glass-card"><div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div><h3>Location</h3><p>Singapore</p></div>
+                    </div>
+                    <form class="contact-form anim glass-card" id="contactForm" action="https://formspree.io/f/mjkgnbkg" method="POST">
+                        <div class="form-row">
+                            <div class="form-group"><input type="text" name="name" id="nameField" required placeholder=" "><label for="nameField">Your Name</label><div class="form-line"></div></div>
+                            <div class="form-group"><input type="email" name="email" id="emailField" required placeholder=" "><label for="emailField">Your Email</label><div class="form-line"></div></div>
+                        </div>
+                        <div class="form-group"><input type="text" name="subject" id="subjectField" required placeholder=" "><label for="subjectField">Subject</label><div class="form-line"></div></div>
+                        <div class="form-group"><textarea name="message" id="messageArea" rows="5" required placeholder=" "></textarea><label for="messageArea">Message</label><div class="form-line"></div></div>
+                        <button type="submit" class="btn btn-primary btn-full"><span>Send Message</span><i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo"><span class="logo-text">YZ</span><span class="logo-dot">.</span></div>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/in/yizhuo-zhang-07b2a1274/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://github.com/yizhuozhang2002" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                    <p class="footer-text">&copy; 2026 Yizhuo Zhang. Crafted with passion.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
